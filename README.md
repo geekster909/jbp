@@ -1,1 +1,2 @@
 # jbp
+Wordpress MU Plugin
