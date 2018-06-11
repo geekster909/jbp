@@ -1,0 +1,184 @@
+.dmcm-editor-wrapper {
+  position: relative;
+  padding-top: 20px;
+  @extend .dmcm-wrap;
+  .dmcm-admin-box {
+    background: #FFF;
+    position: relative;
+    top: 39px;
+    border: 1px solid $primary;
+    z-index: 0;
+  }
+}
+
+.dmcm-editor-nav {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  z-index: 10;
+  ul, li {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    position: relative;
+    margin-left: 20px;
+  }
+
+  li {
+    position: relative;
+    background: $primary_light;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid $primary;
+    border-bottom: none;
+    transition: all 200ms ease-in-out;
+    a {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: #FFF;
+      padding: 10px 30px;
+      font-weight: bold;
+      transition: all 200ms ease-in-out;
+    }
+    &:hover {
+      background: $primary;
+      a {
+        color: #FFF;
+      }
+    }
+    &.active {
+      padding-bottom: 1px;
+      background: #FFF;
+      a {
+        color: $primary;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.form-section {
+  h2 {
+    color: $primary;
+    font-size: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $primary_lighter;
+  }
+}
+
+.dmcm-form-field {
+  margin: 10px 0;
+  padding: 10px 0;
+
+  input[type=text], textarea, select[multiple] {
+    line-height: 36px;
+    padding: 0 0 0 10px;
+    width: 100%;
+    border: 1px solid $primary_lighter;
+    box-shadow: none;
+  }
+
+  textarea, select[multiple]{
+    height: 200px !important;
+  }
+
+  textarea {
+    line-height: 22px;
+    padding: 10px;
+  }
+
+  select, select[multiple] {
+    padding-left: 0;
+    width: 50%;
+  }
+
+  input[type=radio] {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.label-col {
+  display: inline-block;
+  padding-right: 5px;
+  width: 215px;
+  text-align: right;
+  label {
+    font-weight: bold;
+    line-height: 37px;
+    color: $primary;
+  }
+  .field-type-textarea &, .field-type-multiselect &{
+    vertical-align: top;
+    label {
+      line-height: 16px;
+    }
+  }
+  small {
+    display: block;
+    clear:both;
+  }
+  strong {
+    color: $primary_light;
+  }
+}
+
+.field-col {
+  display: inline-block;
+  width: 600px;
+  ul {
+    margin: 0;
+  }
+  .field-type-radio &{
+    label {
+      margin-right: 5px;
+    }
+  }
+}
+
+.dmcm-controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+  .button {
+    box-shadow: none !important;
+  }
+}
+
+.to-remove {
+  opacity: .2;
+  position: relative;
+  content: "test";
+}
+
+.dmcm-media-uploader {
+  div {
+    padding: 20px;
+    border: 1px solid $primary_lighter;
+    margin-bottom: 20px;
+  }
+  div > div {
+    border: none;
+  }
+  img {
+    max-width: 50px;
+    display: inline-block;
+  }
+}
+
+.active-row {
+  background: $primary_light !important;
+  border: 1px solid $primary;
+  td, td a {
+    color: #FFF;
+  }
+}
+
+.updated-row {
+  background: $primary_lighter;
+}

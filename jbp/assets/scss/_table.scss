@@ -1,0 +1,22 @@
+.search-box {
+  float: right;
+  margin-bottom: 5px;
+  button {
+    box-shadow: none !important;
+  }
+}
+
+.column-product_id {
+  width: 10%;
+}
+
+.column-sku {
+  width: 15%;
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.column-type {
+  width: 15%;
+}
