@@ -1,24 +1,24 @@
-.dmcm-admin-box {
+.jbp-admin-box {
   position: relative;
   border-radius: 4px;
   padding: 1.25rem;
   min-height: 50rem;
 }
 
-.dmcm-wrap {
+.jbp-wrap {
   margin: 10px 20px 10px 0;
   max-width: 1400px;
 }
 
-.dmcm__column{
+.jbp__column{
   width: 49.5%;
   display: inline-block;
   vertical-align: top;
   padding: 0;
   &--left {
-    @extend .dmcm__column;
+    @extend .jbp__column;
   }
   &--right {
-    @extend .dmcm__column;
+    @extend .jbp__column;
   }
 }

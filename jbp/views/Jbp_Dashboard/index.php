@@ -1,12 +1,12 @@
-<div class="dmcm-wrap">
-    <div class="dmcm-dashboard wrap">
-        <h1 class="dmcm-title">Welcome to the <?php echo $this->client ?>'s Dashboard</h1>
+<div class="jbp-wrap">
+    <div class="jbp-dashboard wrap">
+        <h1 class="jbp-title">Welcome to the <?php echo $this->client ?>'s Dashboard</h1>
         <h3>Select an option:</h3>
         <ul>
             <li>
                 <a href="?page=jbp_dealer">
                     <svg><use xlink:href="#dealers"></use></svg>
-                    <span>Manage Dealers</span>
+                    <span>Manage Dealerss</span>
                 </a>
             </li>
             <li>

@@ -16,8 +16,8 @@
     var obj = {};
 
     function togglePanels(trigger) {
-        var panel_to_hide = $('#dmcm-' + obj.hide);
-        var panel_to_show = $('#dmcm-' + obj.show);
+        var panel_to_hide = $('#jbp-' + obj.hide);
+        var panel_to_show = $('#jbp-' + obj.show);
 
         panel_to_hide.addClass('is-hidden').bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
             $(trigger).parents('ul').find('li.active').removeClass('active');
@@ -41,7 +41,7 @@
         window.history.replaceState(null, null, pageUrl);
     }
 
-    $(document).on('click', '.js-dmcm-panel-nav-link', function(e) {
+    $(document).on('click', '.js-jbp-panel-nav-link', function(e) {
         e.preventDefault();
 
         if ($(this).parent().hasClass('active')) {
@@ -54,7 +54,7 @@
         togglePanels(e.target || e.srcElement);
     });
 
-    $(document).on('click', '.js-dmcm-remove-image', function(e){
+    $(document).on('click', '.js-jbp-remove-image', function(e){
         e.preventDefault();
 
         var data = $(this).data();
@@ -81,13 +81,13 @@
     });
 
 
-    $(document).on('change', '.js-dmcm-select-image', function(){
+    $(document).on('change', '.js-jbp-select-image', function(){
         var value = $(this).val().split('fakepath\\')[1];
         $(this).siblings('input[type=hidden]').val(value);
     });
 
 
-    function dmcmRelatedProductsCreateTableRow(id, sku, status, name) {
+    function jbpRelatedProductsCreateTableRow(id, sku, status, name) {
         var tr = document.createElement('tr'),
             a = document.createElement('a'),
             remove = document.createElement('a'),
@@ -102,12 +102,12 @@
         td_sku.innerHTML = sku;
         td_status.innerHTML = status;
 
-        a.href = 'admin.php?page=dmcm_products&action=edit&dmcm_id=' + id;
+        a.href = 'admin.php?page=jbp_products&action=edit&jbp_id=' + id;
         a.text = name;
 
         remove.href = '#';
         remove.text = '[x]';
-        remove.classList.add('dmcm-related-products-remove-row');
+        remove.classList.add('jbp-related-products-remove-row');
         remove.dataset.pid = id;
 
         td_name.appendChild(a);
@@ -128,11 +128,11 @@
      * @param  {[type]} e){                     e.preventDefault();        var trigger [description]
      * @return {[type]}      [description]
      */
-    $(document).on('click', '.dmcm-related-product-link', function(e){
+    $(document).on('click', '.jbp-related-product-link', function(e){
         e.preventDefault();
         var trigger = e.target || e.scrElement,
-            input = document.querySelector('#dmcm-related-products-field'),
-            table = document.querySelector('#dmcm-related-products-table'),
+            input = document.querySelector('#jbp-related-products-field'),
+            table = document.querySelector('#jbp-related-products-table'),
             id, sku, name, status;
 
         if (trigger.classList.contains('disabled')) {
@@ -147,7 +147,7 @@
         trigger.classList.add('disabled');
         input.value += ';' + id;
 
-        $(table).find('tbody').append(dmcmRelatedProductsCreateTableRow(id, sku, status, name));
+        $(table).find('tbody').append(jbpRelatedProductsCreateTableRow(id, sku, status, name));
 
         return true;
     });
@@ -158,11 +158,11 @@
      * @param  {[type]} e){                     e.preventDefault();        var trigger [description]
      * @return {[type]}      [description]
      */
-    $(document).on('click', '.dmcm-related-products-remove-row', function(e){
+    $(document).on('click', '.jbp-related-products-remove-row', function(e){
         e.preventDefault();
 
         var trigger = e.target || e.scrElement,
-            input = document.querySelector('#dmcm-related-products-field'),
+            input = document.querySelector('#jbp-related-products-field'),
             row = trigger.parentNode.parentNode,
             id = trigger.dataset.pid,
             selected = input.value.split(';'),
@@ -186,7 +186,7 @@
 
         }).get().join(';');
 
-        jQuery('#dmcm-related-products-field').val( mappedItems );
+        jQuery('#jbp-related-products-field').val( mappedItems );
     }
 
     jQuery(".js-related-sortable-container").sortable({
@@ -207,10 +207,10 @@
     });
 
 
-    $('.js-dmcm-importer-type').on('click', function(e) {
+    $('.js-jbp-importer-type').on('click', function(e) {
         e.preventDefault();
 
-        var base_export_href = 'admin.php?page=dmcm_importer&action=export';
+        var base_export_href = 'admin.php?page=jbp_importer&action=export';
         var type;
         var export_all_href_params;
         var export_template_href_params;
@@ -370,7 +370,7 @@
         var features_link;
         var remove_link;
         var spinner = $('<span class="spinner"></span>');
-        var table = $('#dmcm-pairings-table');
+        var table = $('#jbp-pairings-table');
 
         for (var i = 0; i < new_pairings.length; i++) {
             current = new_pairings[i];

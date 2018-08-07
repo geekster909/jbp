@@ -25,22 +25,22 @@ a, a:focus, a:active {
   top: -1px;
 }
 
-.dmcm-title {
+.jbp-title {
   display: block;
   line-height: 36px;
   margin: 0;
   padding: 0;
 }
 
-.dmcm-block-title {
-  @extend .dmcm-title;
+.jbp-block-title {
+  @extend .jbp-title;
   margin-bottom: 20px;
   padding-bottom: 5px;
   border-bottom: 1px solid $primary;
 }
 
-.dmcm-module-title {
-  @extend .dmcm-title;
+.jbp-module-title {
+  @extend .jbp-title;
 }
 
 svg {
@@ -62,7 +62,7 @@ svg {
     color: $primary_light;
   }
 }
-.dmcm-dashboard {
+.jbp-dashboard {
   width: 100%;
   height: auto;
   h3 {

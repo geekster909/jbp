@@ -13,14 +13,14 @@
     ['label' => 'Latitude', 'field' => 'latitude'],
     ['label' => 'Longitude', 'field' => 'longitude']
 ]; ?>
-<div class="dmcm-wrap">
-    <h1 class="dmcm-block-title"><svg class="icon-title"><use xlink:href="#manage"></use></svg><?php echo $editor->title; ?></h1>
+<div class="jbp-wrap">
+    <h1 class="jbp-block-title"><svg class="icon-title"><use xlink:href="#manage"></use></svg><?php echo $editor->title; ?></h1>
     <form id="jbp-delete-dealer-form" action="?page=jbp_dealer&action=deleteDealer" method="post">
 		<input id="dealer_id" type="text" name="dealer_id" value="<?php echo $editor->recordId; ?>" style="display: none!important;">
 		<input type="submit" value="Delete Dealer" />
     </form>
     <a class="back-to-dashboard" href="?page=jbp_dealer">&larr; Back to Manage Dealers</a>
-    <div class="dmcm-editor-wrapper">
+    <div class="jbp-editor-wrapper">
 		<form id="jbp-dealer-form" action="?page=jbp_dealer&action=updateDealer" method="post">
 			<input id="dealer_id" type="text" name="dealer_id" value="<?php echo $editor->recordId; ?>" style="display: none!important;">
 			<?php foreach ($fields as $field): ?>

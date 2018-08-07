@@ -17,7 +17,7 @@
      * @param cat_id
      * @param element
      */
-    function dmcm_get_category_products (data, cat_id, element) {
+    function jbp_get_category_products (data, cat_id, element) {
 
         $('.icon-loader').remove();
 
@@ -47,7 +47,7 @@
         cat_id_field.attr('name', 'category_id');
         cat_id_field.attr('value', cat_id);
 
-        $('#dmcm--content-container').append(cat_id_field);
+        $('#jbp--content-container').append(cat_id_field);
 
         /* Empty Category Items*/
         $('.sortable-container').empty();
@@ -74,7 +74,7 @@
     }
 
 
-    $(document).on('click', '.js-dmcm-get-cat-products', function(e) {
+    $(document).on('click', '.js-jbp-get-cat-products', function(e) {
         e.preventDefault();
 
         $('.icon-loader').remove();
@@ -83,9 +83,9 @@
         //element clicked
         element = $( this );
 
-        $('#dmcm-categories-tree').find('.active').removeClass('active');
+        $('#jbp-categories-tree').find('.active').removeClass('active');
 
-        $('#dmcm_category_id').val(element.data('cat_id'));
+        $('#jbp_category_id').val(element.data('cat_id'));
 
         element.addClass('active');
 
@@ -101,7 +101,7 @@
         /* If Sort Order is not saved then save */
         if( answer ){
 
-            $('.dmcm-submit').children('button').trigger('click');
+            $('.jbp-submit').children('button').trigger('click');
 
             //Do Not Pass Go
             return false;
@@ -134,7 +134,7 @@
                 console.log("success", data);
 
                 /* Fetch category products by id and name */
-                dmcm_get_category_products(data, json.cat_id, element);
+                jbp_get_category_products(data, json.cat_id, element);
 
             })
             .fail(function(e) {

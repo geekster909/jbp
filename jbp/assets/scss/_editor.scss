@@ -1,8 +1,8 @@
-.dmcm-editor-wrapper {
+.jbp-editor-wrapper {
   position: relative;
   padding-top: 20px;
-  @extend .dmcm-wrap;
-  .dmcm-admin-box {
+  @extend .jbp-wrap;
+  .jbp-admin-box {
     background: #FFF;
     position: relative;
     top: 39px;
@@ -11,7 +11,7 @@
   }
 }
 
-.dmcm-editor-nav {
+.jbp-editor-nav {
   position: absolute;
   top: 20px;
   width: 100%;
@@ -71,7 +71,7 @@
   }
 }
 
-.dmcm-form-field {
+.jbp-form-field {
   margin: 10px 0;
   padding: 10px 0;
 
@@ -141,7 +141,7 @@
   }
 }
 
-.dmcm-controls {
+.jbp-controls {
   position: absolute;
   right: 0;
   top: 0;
@@ -156,7 +156,7 @@
   content: "test";
 }
 
-.dmcm-media-uploader {
+.jbp-media-uploader {
   div {
     padding: 20px;
     border: 1px solid $primary_lighter;

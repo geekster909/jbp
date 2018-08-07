@@ -129,7 +129,7 @@ class Jbp {
             return;
         }
 
-        wp_register_script( 'jbp_admin_script', JBP_APP_URL . 'assets/js/dmcm.js', array('jquery'), $this->version, true );
+        wp_register_script( 'jbp_admin_script', JBP_APP_URL . 'assets/js/jbp.js', array('jquery'), $this->version, true );
 
         wp_enqueue_script( 'jquery_ui_script', '//code.jquery.com/ui/1.10.3/jquery-ui.js', array('jquery'), $this->version, false );
         wp_enqueue_script( 'jbp_admin_script');
