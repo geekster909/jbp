@@ -340,4 +340,16 @@ svg {
     color: #FFF !important;
     border: 1px solid #2ba7b1 !important; }
 
+.acf-field {
+  margin-bottom: 10px; }
+
+.acf-label {
+  margin-bottom: 5px; }
+  .acf-label label {
+    font-size: 14px; }
+
+.acf-input input {
+  height: 40px;
+  min-width: 300px; }
+
 /*# sourceMappingURL=styles.css.map */
