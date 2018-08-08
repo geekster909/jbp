@@ -190,35 +190,39 @@
 					    WHERE id = ".$dealer[0]."
 					 ";
 				} else {
-					$querystr = "
-					    INSERT INTO _jbp_dealers
-					    (
-							name,
-							address_1,
-					    	address_2,
-					    	city,
-					    	state,
-					    	zip,
-					    	country,
-					    	website,
-					    	phone,
-					    	latitude,
-					    	longitude
-					    )
-					    VALUES (
-					    	'".$dealer[1]."',
-					    	'".$dealer[2]."',
-					    	'".$dealer[3]."',
-					    	'".$dealer[4]."',
-					    	'".$dealer[5]."',
-					    	'".$dealer[6]."',
-					    	'".$dealer[7]."',
-					    	'".$dealer[8]."',
-					    	'".$dealer[9]."',
-					    	'".$dealer[10]."',
-					    	'".$dealer[11]."'
-					    )
-					 ";
+					if ($dealer[1]) {
+						if (!$this->doesDealerExist($dealer[1],$dealer[2])) {
+							$querystr = "
+							    INSERT INTO _jbp_dealers
+							    (
+									name,
+									address_1,
+							    	address_2,
+							    	city,
+							    	state,
+							    	zip,
+							    	country,
+							    	website,
+							    	phone,
+							    	latitude,
+							    	longitude
+							    )
+							    VALUES (
+							    	'".$dealer[1]."',
+							    	'".$dealer[2]."',
+							    	'".$dealer[3]."',
+							    	'".$dealer[4]."',
+							    	'".$dealer[5]."',
+							    	'".$dealer[6]."',
+							    	'".$dealer[7]."',
+							    	'".$dealer[8]."',
+							    	'".$dealer[9]."',
+							    	'".$dealer[10]."',
+							    	'".$dealer[11]."'
+							    )
+							";
+						}
+					}
 				}
 				
 				$results = $wpdb->get_results($querystr, OBJECT);
@@ -230,5 +234,28 @@
 			global $wpdb;
 
 			return $wpdb->get_results( "SELECT * FROM _jbp_dealers" );
+		}
+
+		public function doesDealerExist($name, $address_1 = null)
+		{
+			global $wpdb;
+
+			$querystr = "
+				SELECT *
+				FROM _jbp_dealers
+				WHERE name = '".$name."'
+			";
+
+			if ($address_1) {
+				$querystr .= " AND address_1 = '".$address_1."'";
+			}
+
+			$results = $wpdb->get_results($querystr, OBJECT);
+
+			if ($results) {
+				return true;
+			}
+
+			return false;
 		}
 	}
