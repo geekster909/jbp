@@ -157,6 +157,11 @@
 			return $existing_columns;
 		}
 
+		public function importDealers($filename)
+		{
+			
+		}
+
 		public function getDataForExport()
 		{
 			global $wpdb;

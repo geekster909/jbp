@@ -2,7 +2,9 @@
 require_once __DIR__ . '/Jbp_dealer.php';
 class Jbp_importer
 {
+	protected $fileName;
 	protected $tmpDir;
+	protected $type;
 
 	function __construct()
     {
@@ -12,6 +14,16 @@ class Jbp_importer
         if (!file_exists($this->tmpDir)) {
             mkdir($this->tmpDir);
         }
+    }
+
+    public function import()
+    {
+        $this->type = $_POST['type'];
+
+        $this->fileUpload();
+        $this->processCsv();
+
+        header('Location: admin.php?page=' . strtolower(get_class()) . '&status=success');
     }
 
 	public function export()
@@ -31,12 +43,8 @@ class Jbp_importer
     {
         $dealer = new Jbp_dealer;
 
-        // $feature_columns = $this->mage->getFeatureColumns();
-        // $product_columns = $product->getColumns();
-        // $vehicle_columns = $vehicle->getColumns();
         $dealer_columns = $dealer->getColumns();
 
-        // $columns = array_merge($vehicle_columns, $product_columns, $feature_columns);
         $columns = array_merge($dealer_columns);
         
         $filename = strtolower($module) . '_' . strtolower($type);
@@ -47,9 +55,9 @@ class Jbp_importer
 
         $filename .= ".csv";
 
-        if (!file_exists($this->tmpDir . $filename)) {
-            touch($this->tmpDir . $filename);
-        }
+        // if (!file_exists($this->tmpDir . $filename)) {
+        //     touch($this->tmpDir . $filename);
+        // }
 
         $csv = implode(',', $columns) . "\n";
 
@@ -77,6 +85,41 @@ class Jbp_importer
         echo $csv;
 
         exit();
+    }
+
+    /**
+     * Uploads CSV
+     */
+    public function fileUpload()
+    {
+        if (empty($_FILES) || !isset($_FILES['file'])) {
+            return;
+        }
+
+        if (file_exists($this->fileName)) {
+            unlink($this->fileName);
+        }
+
+        move_uploaded_file($_FILES['file']["tmp_name"], $this->fileName);
+    }
+
+    /**
+     * Process CSV
+     */
+    public function processCsv()
+    {
+        $dealer = new Jbp_dealer();
+        $dealer->{ 'import' . ucfirst( $this->type ) }($this->fileName);
+
+        return;
+    }
+
+    /**
+     * Removing the temp CSV file.
+     */
+    public function removeTempFile() 
+    {
+        return unlink($this->fileName);
     }
 
     public function prepareDataForExport()
