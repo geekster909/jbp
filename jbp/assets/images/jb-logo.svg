@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1765 80 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_6_1" data-name="Symbol 6 – 1" transform="translate(-2004)">
+    <rect id="Rectangle_51" data-name="Rectangle 51" class="cls-1" width="80" height="80" transform="translate(239 80)"/>
+    <g id="Group_65" data-name="Group 65" transform="translate(248 97)">
+      <path id="Path_1" data-name="Path 1" class="cls-2" d="M10.476,21.258V31.324a.6.6,0,0,0,.562.562h5.314a.628.628,0,0,0,.664-.562V0H27.492V36.026a4.56,4.56,0,0,1-4.6,4.65H4.65A4.666,4.666,0,0,1,0,36.026V21.258Z"/>
+      <path id="Path_2" data-name="Path 2" class="cls-2" d="M62.5,49.225V8.6H87.539c3.322,0,5.417,2.1,5.417,5.11v9.045c0,2.759-1.789,5.417-5.519,6.336,3.73.92,5.825,3.424,5.825,6.132v8.84c0,3.168-2.1,5.161-5.417,5.161ZM82.889,17.338a.631.631,0,0,0-.613-.664h-9.4v8.432h9.4a.6.6,0,0,0,.613-.664Zm0,15.892a.631.631,0,0,0-.613-.664h-9.4V41.56h9.4a.589.589,0,0,0,.613-.613Z" transform="translate(-30.562 -4.205)"/>
+    </g>
+  </g>
+</svg>

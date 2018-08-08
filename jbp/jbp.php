@@ -46,7 +46,7 @@ class Jbp {
 
             $this->settings = [];
 
-            $this->settings['icon'] = JBP_APP_URL . 'assets/images/icon_default.png';
+            $this->settings['icon'] = JBP_APP_URL . 'assets/images/jb-logo.svg';
             $this->settings['error_page'] = JBP_VIEWS_PATH . '404.php';
 
             if (isset($_REQUEST['page']) && strpos($_REQUEST['page'], 'jbp') !== false) {
