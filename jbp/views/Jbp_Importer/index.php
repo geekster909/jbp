@@ -1,9 +1,19 @@
+<?php 
+    $status = isset($_GET['status']) ? $_GET['status'] : null;
+?>
 <div class="jbp-wrap">
 	<?php if (false): ?>
 		<div id="message" class="notice notice-error is-dismissible" style="margin-top: 20px; margin-bottom: 20px;"><p>Alert - <?php echo urldecode($this->error_message); ?>. Please correct error and try again.</p></div>
 	<?php endif; ?>
     <h1 class="jbp-block-title"><svg class="icon-title"><use xlink:href="#importer"></use></svg>Importer/Exporter</h1>
     <a class="back-to-dashboard" href="?page=jbp_dashboard">&larr; Back to Dashboard</a>
+    <?php if (!is_null($status)): ?>
+        <br>
+        <?php $containerClasses = 'notice is-dismissible' ?>
+        <?php $containerClasses .= $status == 'success' ? ' notice-success' : ' notice-error'; ?>
+        <?php $msg = $status == 'success' ? 'Import Successful' : 'Import Failed'; ?>
+        <div id="message" class="<?php echo $containerClasses; ?>"><p><?php echo $msg; ?></p></div>
+    <?php endif; ?>
     <div class="jbp-admin-box">
         <div class="jbp-importer-outer-wrapper" id="js-option">
             <div class="jbp-importer-inner-wrapper">
@@ -25,7 +35,7 @@
                     <span id="js-csv-import-file-name"></span>
                     <small>Maximum file size: <strong><?php echo ini_get('upload_max_filesize'); ?></strong></small>
                     <div style="padding-top: 10px">
-                        <button class="button button-hero">Import</button>
+                        <button class="button button-hero" disabled>Import</button>
                     </div>
                 </div>
             </form>

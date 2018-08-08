@@ -204,6 +204,7 @@
     $('#js-csv-import-file-input').on('change', function(e) {
         e.preventDefault();
         $("#js-csv-import-file-name").text(this.value.split('fakepath\\')[1]);
+        $('#js-csv-import .button-hero').prop("disabled", false);
     });
 
 
@@ -215,7 +216,7 @@
         var export_all_href_params;
         var export_template_href_params;
 
-        if ($(this).hasClass('active')) {
+        if ($(this).hasClass('active') || $(this).attr('disabled')) {
             return;
         }
 

@@ -159,7 +159,70 @@
 
 		public function importDealers($filename)
 		{
-			
+
+			$csv_dealers = readCSV($filename);
+
+			// remove header
+			array_shift($csv_dealers);
+
+			// remove empty rows
+			$csv_dealers = array_filter($csv_dealers);
+
+			// echo '<pre>'; print_r($csv_dealers); echo '</pre>';die('here');
+			foreach ($csv_dealers as $dealer) {
+				global $wpdb;
+				
+				if ($dealer[0]) {
+					$querystr = "
+					    UPDATE _jbp_dealers
+					    SET
+					    	name = 		'".$dealer[1]."',
+					    	address_1 = '".$dealer[2]."',
+					    	address_2 = '".$dealer[3]."',
+					    	city = 		'".$dealer[4]."',
+					    	state = 	'".$dealer[5]."',
+					    	zip = 		'".$dealer[6]."',
+					    	country = 	'".$dealer[7]."',
+					    	website = 	'".$dealer[8]."',
+					    	phone = 	'".$dealer[9]."',
+					    	latitude = 	'".$dealer[10]."',
+					    	longitude = '".$dealer[11]."'
+					    WHERE id = ".$dealer[0]."
+					 ";
+				} else {
+					$querystr = "
+					    INSERT INTO _jbp_dealers
+					    (
+							name,
+							address_1,
+					    	address_2,
+					    	city,
+					    	state,
+					    	zip,
+					    	country,
+					    	website,
+					    	phone,
+					    	latitude,
+					    	longitude
+					    )
+					    VALUES (
+					    	'".$dealer[1]."',
+					    	'".$dealer[2]."',
+					    	'".$dealer[3]."',
+					    	'".$dealer[4]."',
+					    	'".$dealer[5]."',
+					    	'".$dealer[6]."',
+					    	'".$dealer[7]."',
+					    	'".$dealer[8]."',
+					    	'".$dealer[9]."',
+					    	'".$dealer[10]."',
+					    	'".$dealer[11]."'
+					    )
+					 ";
+				}
+				
+				$results = $wpdb->get_results($querystr, OBJECT);
+			}
 		}
 
 		public function getDataForExport()
