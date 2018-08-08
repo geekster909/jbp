@@ -8,8 +8,8 @@
         <div class="jbp-importer-outer-wrapper" id="js-option">
             <div class="jbp-importer-inner-wrapper">
                 <h2>Select a module to import:</h2>
-                <a href="#" class="js-jbp-importer-type button button-hero" data-type="1040">1040</a>
-                <a href="#" class="js-jbp-importer-type button button-hero" data-type="Products">Products</a>
+                <a href="#" class="js-jbp-importer-type button button-hero" data-type="1040" disabled>1040</a>
+                <a href="#" class="js-jbp-importer-type button button-hero" data-type="Dealers">Dealers</a>
 <!--                <a href="#" class="js-jbp-importer-type button button-hero" data-type="features">Features</a>-->
             </div>
         </div>

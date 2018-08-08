@@ -147,4 +147,20 @@
 	    	exit;
 
 		}
+
+		public function getColumns()
+		{
+			global $wpdb;
+
+			$existing_columns = $wpdb->get_col("DESC _jbp_dealers", 0);
+
+			return $existing_columns;
+		}
+
+		public function getDataForExport()
+		{
+			global $wpdb;
+
+			return $wpdb->get_results( "SELECT * FROM _jbp_dealers" );
+		}
 	}
