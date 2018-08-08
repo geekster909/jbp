@@ -29,8 +29,8 @@
 </style>
 <div class="jbp-wrap">
     <h1 class="jbp-block-title"><svg class="icon-title"><use xlink:href="#dealers"></use></svg>Manage Dealers</h1>
-    <a class="back-to-dashboard" href="?page=jbp_dashboard" style="display: block">&larr; Back to Dashboard</a>
-    <a class="back-to-dashboard" href="?page=jbp_dealer&action=add" style="display: block">Add Dealer</a>
+    <a class="back-to-dashboard" href="?page=jbp_dashboard" style="display: inline-block">&larr; Back to Dashboard</a>
+    <a class="button jbp-button add-dealer" href="?page=jbp_dealer&action=add" style="display: inline-block">Add Dealer</a>
     <?php if (!is_null($showMsg)): ?>
         <br>
     <?php $containerClasses = 'notice is-dismissible' ?>

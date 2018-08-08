@@ -27,9 +27,10 @@
 			            </div>
 			        </div>
 			    </div>
-			<?php endforeach; ?>		
+			<?php endforeach; ?>	
+			<br />	
 			<div>
-				<input type="submit" value="Submit" />
+				<input type="submit" value="Submit" class="button jbp-button" />
 			</div>
 		</form>
     </div>
