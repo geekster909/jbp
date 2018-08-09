@@ -9,7 +9,7 @@
 		/**
 	     * Create Dealer DB
 	     */
-	    public function create_dealer_db()
+	    private function create_dealer_db()
 	    {
 
 	        global $wpdb;
