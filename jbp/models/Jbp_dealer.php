@@ -190,7 +190,7 @@
 					    WHERE id = ".$dealer[0]."
 					 ";
 				} else {
-					if ($dealer[1]) {
+					if ($dealer[1] & $dealer[2] & $dealer[4] & $dealer[5] & $dealer[6]) {
 						if (!$this->doesDealerExist($dealer[1],$dealer[2])) {
 							$querystr = "
 							    INSERT INTO _jbp_dealers
