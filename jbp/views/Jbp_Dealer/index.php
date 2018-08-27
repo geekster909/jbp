@@ -27,6 +27,9 @@
 		border-bottom: none;
 	}
 </style>
+<!-- Using https://datatables.net/ for pagination -->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <div class="jbp-wrap">
     <h1 class="jbp-block-title"><svg class="icon-title"><use xlink:href="#dealers"></use></svg>Manage Dealers</h1>
     <a class="back-to-dashboard" href="?page=jbp_dashboard" style="display: inline-block">&larr; Back to Dashboard</a>
@@ -52,9 +55,10 @@
             })(jQuery)
         </script>
     <?php endif; ?>
-
+	<br />
+	<br />
 	<?php if ($dealers) : ?>
-		<table>
+		<table id="dealersTable" class="display">
 			<thead>
 				<tr>
 					<th>id</th>
@@ -82,3 +86,8 @@
 		<p>There are currently no dealers</p>
 	<?php endif; ?>
 </div>
+<script type="text/javascript">
+	jQuery(document).ready( function ($) {
+    	$('#dealersTable').DataTable({});
+	} );
+</script>
