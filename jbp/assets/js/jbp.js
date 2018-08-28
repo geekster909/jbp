@@ -204,7 +204,9 @@
     $('#js-csv-import-file-input').on('change', function(e) {
         e.preventDefault();
         $("#js-csv-import-file-name").text(this.value.split('fakepath\\')[1]);
-        $('#js-csv-import .button-hero').prop("disabled", false);
+        if (this.value.includes('.csv')) {
+            $('#js-csv-import .button-hero').prop("disabled", false);
+        }
     });
 
 
