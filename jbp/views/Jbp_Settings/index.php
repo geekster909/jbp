@@ -1,6 +1,5 @@
 <?php $settings = $this->getModel()->getJbpSettings();  ?>
 <?php $settings = $settings[0];  ?>
-<?php //echo '<pre>'; print_r($settings); echo '</pre>';die('here'); ?>
 <?php 
     $status = isset($_GET['status']) ? $_GET['status'] : null;
 ?>
@@ -30,7 +29,7 @@
                 </div>
                 <br />  
                 <div>
-                    <input type="submit" value="Submit" class="button jbp-button button-hero" />
+                    <input type="submit" value="Save" class="button jbp-button button-hero" />
                 </div>
             </div>
         </form>
