@@ -3,6 +3,7 @@
 require_once __DIR__ . '/models/Jbp_dashboard.php';
 require_once __DIR__ . '/models/Jbp_dealer.php';
 require_once __DIR__ . '/models/Jbp_importer.php';
+require_once __DIR__ . '/models/Jbp_settings.php';
 
 class Jbp {
 
@@ -144,6 +145,7 @@ class Jbp {
         add_submenu_page( 'jbp_dashboard', $this->client . ' :: Jbp Manager', 'Dashboard', 'manage_options', 'jbp_dashboard', array($this, 'loadView'));
         add_submenu_page( 'jbp_dashboard', 'Manage Dealers', 'Manage Dealers', 'manage_options', 'jbp_dealer', array($this, 'loadView'));
         add_submenu_page( 'jbp_dashboard', 'Import/Export', 'Import/Export', 'manage_options', 'jbp_importer', array($this, 'loadView'));
+        add_submenu_page( 'jbp_dashboard', 'General Settings', 'General Settings', 'manage_options', 'jbp_settings', array($this, 'loadView'));
     }
 
     /**

@@ -15,12 +15,12 @@
                     <span>Import/Export</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="#">
+            <li>
+                <a href="?page=jbp_settings">
                     <svg><use xlink:href="#settings"></use></svg>
                     <span>General Settings</span>
                 </a>
-            </li> -->
+            </li>
         </ul>
     </div>
 </div>
