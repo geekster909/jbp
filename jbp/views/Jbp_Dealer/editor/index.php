@@ -80,7 +80,12 @@
             response => {
                 console.log('Success:', response);
                 if (response['results'].length > 0) {
+
 	                let location = response['results'][0]['geometry']['location'];
+
+	                location['lat'] = Math.round(location['lat']*1000000)/1000000
+	                location['lng'] = Math.round(location['lng']*1000000)/1000000
+	                
 	                if (location) {
 	                	document.getElementById('latitude').value = location['lat'];
 	                	document.getElementById('longitude').value = location['lng'];
