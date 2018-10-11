@@ -1,2 +1,3 @@
 # jbp
-Wordpress MU Plugin
+
+Custom Wordpress MU plugin for managing dealers
